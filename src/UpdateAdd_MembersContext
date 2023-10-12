@@ -1,0 +1,35 @@
+import React, { createContext, useState } from 'react'
+
+
+export const UpdateContext = createContext();
+
+const UpdateAdd_MembersContext = (props) => {
+
+    const [updateAdd_Members, setUpdateAdd_Members] = useState({
+      id: '',
+      name: '',
+      age: '',
+      category: '',
+      description: '',
+      amount: '',
+      join_date: ''
+    })
+
+    return (
+        <UpdateContext.Provider value={[updateAdd_Members, setUpdateAdd_Members]}>
+            {props.children}
+        </UpdateContext.Provider>
+    )
+}
+
+export default UpdateAdd_MembersContext;
+
+// import UpdateAdd_MembersContext from './UpdateAdd_MembersContext';
+
+// function App() {
+//   return (
+//     <UpdateAdd_MembersContext>
+//       {/* Your other components */}
+//     </UpdateAdd_MembersContext>
+//   );
+// }
